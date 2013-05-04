@@ -1,8 +1,6 @@
 # encoding: utf-8
 
-$:.unshift "#{File.dirname(__FILE__)}/lib"
-
-require 'toto'
+require './lib/toto'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'

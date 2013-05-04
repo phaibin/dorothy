@@ -14,9 +14,7 @@ end
 
 require 'builder'
 
-$:.unshift File.dirname(__FILE__)
-
-require 'ext/ext'
+require './lib/ext/ext'
 
 module Toto
   Paths = {

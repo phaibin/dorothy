@@ -1,6 +1,4 @@
-$:.unshift "#{File.dirname(__FILE__)}/lib"
-
-require 'toto'
+require './lib/toto'
 
 @config = Toto::Config::Defaults
 
