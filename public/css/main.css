@@ -43,6 +43,25 @@ a:hover {
   color: black;
   text-decoration: underline;
 }
+h1, h2, h3, h4 {
+  display: inline;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+hr { margin: 15px; }
+li { line-height: 25px; }
+
+code {
+  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
+}
+pre {
+  padding: 10px 20px;
+}
+blockquote {
+  font-style: italic;
+}
+
+/*header*/
 body > header {
   display: block;
   padding-top: 30px;
@@ -61,22 +80,16 @@ body > header > h1 > a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
-  display: inline;
-  margin: 0;
-  font-weight: 600;
+/*nav*/
+body > nav {
+  line-height: 10px;
+}
+body > nav > ul {
+  line-height: 10px;
+  margin: 0px;
 }
 
-code {
-  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
-}
-pre {
-  padding: 20px;
-}
-blockquote {
-  font-style: italic;
-}
-
+/*footer*/
 body > footer {
   text-align: left;
   margin-left: 10px;
@@ -85,6 +98,7 @@ body > footer {
   color: #888;
 }
 
+/*ariticle*/
 article header {
 	margin-bottom: 10px;
 }
@@ -101,7 +115,11 @@ article {
 article:last-child {
   margin-bottom: 10px;
 }
-article p, li {
+article > p {
+  margin: 10px 0;
+  line-height: 25px;
+}
+article li {
   margin: 10px 0;
   line-height: 25px;
 }

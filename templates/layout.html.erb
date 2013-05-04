@@ -10,11 +10,20 @@
   <body>
     <header>
       <h1><a href="/"><%= site_title %></a></h1>
-      <hr>
     </header>
+    <nav>
+      <ul class="inline">
+        <li><a href="/archives">存档</a></li>
+        <li><a href="/About">关于我</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </nav>
+    <hr>
     <section>
       <%= yield %> 
     </section>
+    <hr> 
     <footer>
       powered by <a href="http://cloudhead.io/toto">toto</a>
     </footer>
