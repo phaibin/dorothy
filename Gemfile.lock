@@ -1,7 +1,8 @@
 GEM
-  remote: http://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     builder (3.2.0)
+    rack (1.5.2)
     rdiscount (2.0.7.2)
 
 PLATFORMS
@@ -9,4 +10,5 @@ PLATFORMS
 
 DEPENDENCIES
   builder
+  rack
   rdiscount
