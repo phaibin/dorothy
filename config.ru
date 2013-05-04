@@ -1,7 +1,6 @@
 # encoding: utf-8
 
-# require './lib/toto'
-require 'toto'
+require './lib/toto'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'

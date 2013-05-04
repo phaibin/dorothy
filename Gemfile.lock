@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     builder (3.2.0)
     daemons (1.1.9)
@@ -10,10 +10,6 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    toto (0.4.9)
-      builder
-      rack
-      rdiscount
 
 PLATFORMS
   ruby
@@ -22,4 +18,3 @@ DEPENDENCIES
   builder
   rdiscount
   thin
-  toto
