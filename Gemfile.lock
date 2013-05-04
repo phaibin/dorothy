@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   remote: http://ruby.taobao.org/
   specs:
     builder (3.2.0)
@@ -6,6 +7,9 @@ GEM
     eventmachine (1.0.3)
     rack (1.5.2)
     rdiscount (2.0.7.2)
+    shotgun (0.9)
+      rack (>= 1.0)
+    stringex (1.5.1)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -17,4 +21,6 @@ PLATFORMS
 DEPENDENCIES
   builder
   rdiscount
+  shotgun
+  stringex
   thin

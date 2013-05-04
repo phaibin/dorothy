@@ -1,4 +1,5 @@
 require './lib/toto'
+require 'stringex'
 
 @config = Toto::Config::Defaults
 
@@ -7,9 +8,9 @@ task :default => :new
 desc "Create a new article."
 task :new do
   title = ask('Title: ')
-  slug = title.empty?? nil : title.strip.slugize
+  slug = title.empty? ? nil : title.strip.to_url
 
-  article = {'title' => title, 'date' => Time.now.strftime("%d/%m/%Y")}.to_yaml
+  article = {'title' => title, 'date' => Time.now.strftime("%Y-%m-%d %H:%M")}.to_yaml
   article << "\n"
   article << "Once upon a time...\n\n"
 

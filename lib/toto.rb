@@ -4,6 +4,7 @@ require 'erb'
 require 'rack'
 require 'digest'
 require 'open-uri'
+require 'stringex'
 
 if RUBY_PLATFORM =~ /win32/
   require 'maruku'
@@ -124,7 +125,7 @@ module Toto
       end
 
     rescue Errno::ENOENT => e
-      return :body => http(404).first, :type => :html, :status => 404
+      return :body => context[{}, '404'], :type => :html, :status => 404
     else
       return :body => body || "", :type => type, :status => status || 200
     end
@@ -158,8 +159,12 @@ module Toto
         end
       end
 
+      def site_title
+        @config[:site_title]
+      end
+
       def title
-        @config[:title]
+        @config[:title] || @config[:site_title]
       end
 
       def render page, type
@@ -226,7 +231,7 @@ module Toto
 
     def load
       data = if @obj.is_a? String
-        meta, self[:body] = File.read(@obj).split(/\n\n/, 2)
+        meta, self[:body] = File.read(@obj).split(/---/, 3)[1..2]
 
         # use the date from the filename, or else toto won't find the article
         @obj =~ /\/(\d{4}-\d{2}-\d{2})[^\/]*$/
@@ -247,7 +252,7 @@ module Toto
     end
 
     def slug
-      self[:slug] || self[:title].slugize
+      self[:slug] || self[:title].to_url
     end
 
     def summary length = nil
@@ -283,7 +288,7 @@ module Toto
   class Config < Hash
     Defaults = {
       :author => ENV['USER'],                               # blog author
-      :title => Dir.pwd.split('/').last,                    # site title
+      :site_title => Dir.pwd.split('/').last,                    # site title
       :root => "index",                                     # site index
       :url => "http://127.0.0.1",                           # root URL of the site
       :prefix => "",                                        # common path prefix for the blog
@@ -295,7 +300,7 @@ module Toto
       :cache => 28800,                                      # cache duration (seconds)
       :github => {:user => "", :repos => [], :ext => 'md'}, # Github username and list of repos
       :to_html => lambda {|path, page, ctx|                 # returns an html, from a path & context
-        ERB.new(File.read("#{path}/#{page}.rhtml")).result(ctx)
+        ERB.new(File.read("#{path}/#{page}.html.erb")).result(ctx)
       },
       :error => lambda {|code|                              # The HTML for your error page
         "<font style='font-size:300%'>toto, we're not in Kansas anymore (#{code})</font>"
