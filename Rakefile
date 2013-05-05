@@ -8,10 +8,12 @@ task :default => :new
 desc "Create a new article."
 task :new do
   title = ask('Title: ')
+  raise "must has a title" if title.empty?
+
   slug = title.empty? ? nil : title.strip.to_url
 
   article = {'title' => title, 'date' => Time.now.strftime("%Y-%m-%d %H:%M")}.to_yaml
-  article << "\n"
+  article << "---\n"
   article << "Once upon a time...\n\n"
 
   path = "#{Toto::Paths[:articles]}/#{Time.now.strftime("%Y-%m-%d")}#{'-' + slug if slug}.#{@config[:ext]}"
@@ -29,7 +31,7 @@ end
 desc "Publish my blog."
 task :publish do
   toto "publishing your article(s)..."
-  `git push heroku master`
+  `git add .; git commit -am "new post"; git push heroku master`
 end
 
 def toto msg

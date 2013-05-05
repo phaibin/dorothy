@@ -296,7 +296,7 @@ module Toto
       :markdown => :smart,                                  # use markdown
       :disqus => false,                                     # disqus name
       :summary => {:max => 150, :delim => /~\n/},           # length of summary and delimiter
-      :ext => 'txt',                                        # extension for articles
+      :ext => 'md',                                        # extension for articles
       :cache => 28800,                                      # cache duration (seconds)
       :github => {:user => "", :repos => [], :ext => 'md'}, # Github username and list of repos
       :to_html => lambda {|path, page, ctx|                 # returns an html, from a path & context
