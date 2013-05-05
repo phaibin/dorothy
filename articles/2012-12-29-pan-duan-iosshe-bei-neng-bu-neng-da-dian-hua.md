@@ -9,4 +9,5 @@ tags:
 published: true
 comments: true
 ---
-<p><p>[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];</p></p>
+代码：
+    [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];

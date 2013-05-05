@@ -9,5 +9,8 @@ tags:
 published: true
 comments: true
 ---
-<p><p>先设置<br />tableView.sectionHeaderHeight = 0;<br />tableView.sectionFooterHeight = 0;</p>
-<p>再根据需要实现：<br />- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section<br />- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section</p></p>
+先设置
+    tableView.sectionHeaderHeight = 0;
+    tableView.sectionFooterHeight = 0;
+再根据需要实现：
+    - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

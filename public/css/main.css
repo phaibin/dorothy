@@ -7,7 +7,7 @@ body {
   padding: 15px;
   width: 720px;
 }
-
+p { margin: 20px 0; }
 header, footer, section, article {
 	display: block;
 }
@@ -96,7 +96,7 @@ body > footer {
 
 /*ariticle*/
 article header {
-	margin-bottom: 20px;
+	margin: 20px 0;
 }
 article .body p:first-child {
 	margin-top: 0;

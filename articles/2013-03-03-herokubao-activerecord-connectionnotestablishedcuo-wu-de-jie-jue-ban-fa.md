@@ -10,7 +10,7 @@ comments: true
 ---
 原因是没有配置数据库信息，而且使用了ActiveRecord。
 
-解决办法就是如果不需要数据库的话建立app的时候可以加上一个参数：--skip-active-record。如果是已经建立的项目，就把config/application.rb里面的
+解决办法就是如果不需要数据库的话建立app的时候可以加上一个参数：`--skip-active-record`。如果是已经建立的项目，就把config/application.rb里面的
 
 	require 'rails/all'
 替换为：

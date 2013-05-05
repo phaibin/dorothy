@@ -8,7 +8,7 @@ tags: []
 published: true
 comments: true
 ---
-做了一个View从一边翻转的demo，代码在https://github.com/phaibin/PaperFlipDemo。
+做了一个View从一边翻转的demo，代码在<https://github.com/phaibin/PaperFlipDemo>。
 效果是这样的：
 
 ![](https://raw.github.com/phaibin/PaperFlipDemo/master/PaperFlipDemo/screenshot.png)
