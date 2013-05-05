@@ -74,10 +74,11 @@ module Toto
       articles = type == :html ? self.articles.reverse : self.articles
       {:articles => articles.map do |article|
         Article.new article, @config
-      end}.merge archives
+      end}
     end
 
     def archives filter = ""
+      puts 'archives'
       entries = ! self.articles.empty??
         self.articles.select do |a|
           filter !~ /^\d{4}/ || File.basename(a) =~ /^#{filter}/
@@ -149,9 +150,32 @@ module Toto
       attr_reader :env
 
       def initialize ctx = {}, config = {}, path = "/", env = {}
+        puts 'Context initialize'
+        puts "path= " + path
         @config, @context, @path, @env = config, ctx, path, env
         @articles = Site.articles(@config[:ext]).reverse.map do |a|
           Article.new(a, @config)
+        end
+        if ctx.is_a? Article
+          @articles.each_with_index do |article, index|
+            puts 'article class ' 
+            if article.file_path == ctx.file_path
+              puts 'get left and right'
+              if index == 0
+                @articles[index+1].load
+                ctx[:right] = @articles[index+1]
+              elsif index == @articles.length
+                @articles[index-1].load
+                ctx[:left] = @articles[index-1]
+              else
+                @articles[index-1].load
+                @articles[index+1].load
+                ctx[:left] = @articles[index-1]
+                ctx[:right] = @articles[index+1]
+              end
+              break
+            end
+          end
         end
 
         ctx.each do |k, v|
@@ -225,11 +249,15 @@ module Toto
     include Template
 
     def initialize obj, config = {}
+      # puts 'article initialize'
+      # p obj
       @obj, @config = obj, config
       self.load if obj.is_a? Hash
+      self[:file_path] = obj
     end
 
     def load
+      puts 'load ' 
       data = if @obj.is_a? String
         meta, self[:body] = File.read(@obj).split(/---/, 3)[1..2]
 
@@ -271,6 +299,8 @@ module Toto
     alias :permalink url
 
     def body
+      p self
+      p path
       markdown self[:body].sub(@config[:summary][:delim], '') rescue markdown self[:body]
     end
 
@@ -282,6 +312,9 @@ module Toto
     def date()    @config[:date].call(self[:date])           end
     def author()  self[:author] || @config[:author]          end
     def to_html() self.load; super(:article, @config)        end
+    def left()    self[:left]                                end
+    def right()   self[:right]                               end
+    def file_path()   self[:file_path]                       end
     alias :to_s to_html
   end
 

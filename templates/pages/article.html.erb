@@ -7,6 +7,15 @@
   <section class="content">
     <%= body %>
   </section>
+  <hr>
+  <section class="navigator">
+    <% if left %>
+    <p>上一篇：<a href="<%= left.path %>"><%= left.title %></a></p>
+    <% end %>
+    <% if right %>
+    <p>下一篇：<a href="<%= right.path %>"><%= right.title %></a></p>
+    <% end %>
+  </section>
 
   <section class="comments">
     <% if @config[:disqus] %>

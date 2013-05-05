@@ -43,11 +43,6 @@ a:hover {
   color: black;
   text-decoration: underline;
 }
-h1, h2, h3, h4 {
-  display: inline;
-  margin: 0 0 20px 0;
-  font-weight: 600;
-}
 hr { margin: 15px; }
 li { line-height: 25px; }
 
@@ -69,10 +64,11 @@ body > header {
   margin-bottom: 20px;
 }
 body > header > h1 {
+  display: inline;
 	border-left: 30px solid black;
 	padding-left: 30px;
   font-size: 101px;
-  margin: 50px 0 15px 0;
+  /*margin: 50px 0 15px 0;*/
   font-weight: normal;
 }
 body > header > h1 > a:hover {
@@ -100,7 +96,7 @@ body > footer {
 
 /*ariticle*/
 article header {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 article .body p:first-child {
 	margin-top: 0;
@@ -129,8 +125,18 @@ article .more {
   font-style: italic;
   text-align: right;
 }
+article img { 
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+
+  max-width: 570px;
+}
+article h2 {
+  display: inline;
+}
 .more a {
   text-decoration: none;
 }
 .more a:hover { text-decoration: underline }
-
+section.navigator { font-size: 15px; }
