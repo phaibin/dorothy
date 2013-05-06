@@ -9,4 +9,8 @@ tags:
 published: true
 comments: true
 ---
-<p><p>[UIView<br /> transitionWithView:self.navigationController.view<br /> duration:0.8<br /> options:UIViewAnimationOptionTransitionCrossDissolve<br /> animations:^{<br /> [self.navigationController pushViewController:elementController animated:NO];<br /> [elementController release];<br /> } completion:NULL];</p></p>
+代码：
+    [UIView transitionWithView:self.navigationController.view duration:0.8 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{ 
+      [self.navigationController pushViewController:elementController animated:NO]; 
+      [elementController release]; 
+    } completion:NULL];

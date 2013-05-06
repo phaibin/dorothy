@@ -9,4 +9,8 @@ tags:
 published: true
 comments: true
 ---
-<p><p>CALayer *bottomBorder = [CALayer layer];<br />bottomBorder.frame = CGRectMake(0.0f, 43.0f, toScrollView.frame.size.width, 1.0f);<br />bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;<br />[toScrollView.layer addSublayer:bottomBorder];</p></p>
+代码：
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0.0f, 43.0f, toScrollView.frame.size.width, 1.0f);
+    bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
+    [toScrollView.layer addSublayer:bottomBorder];

@@ -8,7 +8,15 @@ tags: []
 published: true
 comments: true
 ---
-<p><p>先为Github加一个远程主机</p>
-<p>$ git remote<br />origin<br />$ git remote add pb git://github.com/paulboone/ticgit.git<br />$ git remote -v<br />origin git://github.com/schacon/ticgit.git<br />pb git://github.com/paulboone/ticgit.git</p>
-<p>然后把代码推送到远程主机</p>
-<p>$ git push origin master</p></p>
+先为Github加一个远程主机
+
+    $ git remote
+    origin
+    $ git remote add pb git://github.com/paulboone/ticgit.git
+    $ git remote -v
+    origin git://github.com/schacon/ticgit.git
+    pb git://github.com/paulboone/ticgit.git
+
+然后把代码推送到远程主机
+
+    $ git push origin master

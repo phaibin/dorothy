@@ -9,9 +9,12 @@ tags:
 published: true
 comments: true
 ---
-<p><p>首先进入</p>
-<p>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs</p>
-<p>找到要删除的模拟器版本删除。然后进入</p>
-<p>~/Library/Caches/com.apple.dt.Xcode/Downloads</p>
-<p>找到下载的模拟器dmg文件删除。</p>
-<p>如果不删除dmg文件，下次启动Xcode会提示你重新安装。</p></p>
+首先进入
+`/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs`
+找到要删除的模拟器版本删除。
+
+然后进入
+`~/Library/Caches/com.apple.dt.Xcode/Downloads`
+找到下载的模拟器dmg文件删除。
+
+如果不删除dmg文件，下次启动Xcode会提示你重新安装。

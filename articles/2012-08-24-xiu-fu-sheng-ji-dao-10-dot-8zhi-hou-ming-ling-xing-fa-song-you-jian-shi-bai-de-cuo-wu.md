@@ -8,7 +8,11 @@ tags: []
 published: true
 comments: true
 ---
-<p><p>升级到10.8之后命令行发邮件就报这个错误：</p>
-<p>sendmail: fatal: chdir /Library/Server/Mail/Data/spool: No such file or directory</p>
-<p>修复的方法是：</p>
-<p>sudo mkdir -p /Library/Server/Mail/Data/spool <br />sudo /usr/sbin/postfix set-permissions <br />sudo /usr/sbin/postfix start</p></p>
+升级到10.8之后命令行发邮件就报这个错误：
+
+    sendmail: fatal: chdir /Library/Server/Mail/Data/spool: No such file or directory
+
+修复的方法是：
+    sudo mkdir -p /Library/Server/Mail/Data/spool 
+    sudo /usr/sbin/postfix set-permissions 
+    sudo /usr/sbin/postfix start
