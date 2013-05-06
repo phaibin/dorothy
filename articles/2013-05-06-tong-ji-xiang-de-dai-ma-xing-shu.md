@@ -1,5 +1,5 @@
 ---
-title: 统计项的代码行数
+title: 统计项目的代码行数
 date: 2013-05-06 17:10
 ---
 原文：<http://blog.csdn.net/sheldongreen/article/details/7938410>
