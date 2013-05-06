@@ -31,7 +31,7 @@ end
 desc "Publish my blog."
 task :publish do
   toto "publishing your article(s)..."
-  `git add .; git commit -am "new post"; git push heroku master`
+  `git add .; git commit -am "new post"; git push heroku master; git push origin master`
 end
 
 def toto msg
