@@ -8,4 +8,4 @@ tags: []
 published: true
 comments: true
 ---
-<p><p>iOS5里面键盘弹出速度比iOS4里面快了0.05s，不知道iOS6里面还会不会变</p></p>
+iOS5里面键盘弹出速度比iOS4里面快了0.05s，不知道iOS6里面还会不会变

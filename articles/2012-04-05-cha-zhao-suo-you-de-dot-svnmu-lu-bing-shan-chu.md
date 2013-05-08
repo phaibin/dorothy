@@ -9,5 +9,7 @@ tags:
 published: true
 comments: true
 ---
-<p><p>cd /some/of/your/folders/</p>
-<p>rm -rf `find . -type d -name .svn`</p></p>
+在命令行下面运行：
+
+    cd /some/of/your/folders/
+    rm -rf `find . -type d -name .svn`

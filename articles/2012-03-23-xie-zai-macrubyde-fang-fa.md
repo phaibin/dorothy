@@ -9,8 +9,12 @@ tags:
 published: true
 comments: true
 ---
-<p><p>首先用pkgutil命令找到安装的那个pkg：</p>
-<p>pkgutil --pkgs |grep -i ruby # get all related to ruby</p>
-<p>然后找到安装的文件：</p>
-<p>pkgutil --files com.apple.macrubyNightlyBuild.macruby-nightly.pkg</p>
-<p>然后逐一删掉它们</p></p>
+首先用pkgutil命令找到安装的那个pkg：
+
+    pkgutil --pkgs |grep -i ruby # get all related to ruby
+
+然后找到安装的文件：
+
+    pkgutil --files com.apple.macrubyNightlyBuild.macruby-nightly.pkg
+    
+然后逐一删掉它们

@@ -8,8 +8,17 @@ tags: []
 published: true
 comments: true
 ---
-<p><p style="border: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-weight: 300; margin: 0px 0px 1.625em; outline: 0px; padding: 0px; vertical-align: baseline; color: #373737; font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff;">如果出现了<br />“django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: dlopen(/Users/xxx/xxx/pyprojects/xxx/lib/python2.7/site-packages/_mysql.so, 2): Library not loaded: libmysqlclient.18.dylibReferenced from: /Users/xxx/xxx/pyprojects/xxx/lib/python2.7/site-packages/_mysql.soReason: image not found”<br />这样的错误</p>
-<p style="border: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-weight: 300; margin: 0px 0px 1.625em; outline: 0px; padding: 0px; vertical-align: baseline; color: #373737; font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff;">在.bash_profile中加入： <br />export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"</p>
-<p style="border: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-weight: 300; margin: 0px 0px 1.625em; outline: 0px; padding: 0px; vertical-align: baseline; color: #373737; font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff;">不过这样只能影响控制台，不能影响IDE等工具，如果要永久修复需要运行：</p>
-<p style="border: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-weight: 300; margin: 0px 0px 1.625em; outline: 0px; padding: 0px; vertical-align: baseline; color: #373737; font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff;">sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/_mysql.so</p>
-<p style="border: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-weight: 300; margin: 0px 0px 1.625em; outline: 0px; padding: 0px; vertical-align: baseline; color: #373737; font-variant: normal; letter-spacing: normal; line-height: 24px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff;">_mysql.so其实是一个到<span style="color: #373737; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 24px;">libmysqlclient.18.dylib的引用，这个命令就是建立_mysql.so到mysql里面library的永久链接。</span></p></p>
+如果出现了
+> django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module: dlopen(/Users/xxx/xxx/pyprojects/xxx/lib/python2.7/site-packages/_mysql.so, 2): Library not loaded: libmysqlclient.18.dylibReferenced from: /Users/xxx/xxx/pyprojects/xxx/lib/python2.7/site-packages/_mysql.soReason: image not found
+
+这样的错误。
+
+在`.bash_profile`中加入： 
+
+    export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
+
+不过这样只能影响控制台，不能影响IDE等工具，如果要永久修复需要运行：
+
+    sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/_mysql.so
+
+\_mysql.so其实是一个到libmysqlclient.18.dylib的引用，这个命令就是建立_mysql.so到mysql里面library的永久链接。
