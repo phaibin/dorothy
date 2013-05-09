@@ -9,6 +9,8 @@ tags:
 published: true
 comments: true
 ---
-<p><p>优惠码：fbhost30</p>
-<p>价格：优惠30%</p>
-<p>截止日期：未知</p></p>
+优惠码：fbhost30
+
+价格：优惠30%
+
+截止日期：未知

@@ -9,8 +9,13 @@ tags:
 published: true
 comments: true
 ---
-<p><p>cd ~/"Library/Application Support/TextMate/Bundles/"</p>
-<p>svn co "http://svn.textmate.org/trunk/Bundles/Ruby Haml.tmbundle"</p>
-<p>或者</p>
-<p>git clone git://github.com/textmate/ruby-haml.tmbundle.git</p>
-<p>然后选择菜单Bundles | Bundle Editor | Reload Bundles。</p></p>
+在命令行运行：
+
+    cd ~/"Library/Application Support/TextMate/Bundles/"
+    svn co "http://svn.textmate.org/trunk/Bundles/Ruby Haml.tmbundle"
+
+或者
+
+    git clone git://github.com/textmate/ruby-haml.tmbundle.git
+    
+然后选择菜单Bundles | Bundle Editor | Reload Bundles。

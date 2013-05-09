@@ -9,5 +9,6 @@ tags:
 published: true
 comments: true
 ---
-<p><p>heroku keys:clear</p>
-<p>然后重新选择</p></p>
+heroku keys:clear
+
+然后重新选择

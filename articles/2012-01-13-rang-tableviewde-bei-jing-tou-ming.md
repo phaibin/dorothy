@@ -10,4 +10,8 @@ tags:
 published: true
 comments: true
 ---
-<p><p>tableView.backgroundColor = [UIColor clearColor];<br />tableView.opaque = NO;<br />tableView.backgroundView = nil;</p></p>
+代码：
+
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.opaque = NO;
+    tableView.backgroundView = nil;
