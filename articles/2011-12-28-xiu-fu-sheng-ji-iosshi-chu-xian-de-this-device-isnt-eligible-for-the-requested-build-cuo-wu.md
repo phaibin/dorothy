@@ -8,6 +8,8 @@ tags: []
 published: true
 comments: true
 ---
-<p><p>找到hosts里面的：</p>
-<p>74.208.151.171 gs.apple.com</p>
-<p>把这行删掉或者注释掉。真搞不清这行是什么工具加上去的。</p></p>
+找到hosts里面的：
+
+    74.208.151.171 gs.apple.com
+    
+把这行删掉或者注释掉。真搞不清这行是什么工具加上去的。

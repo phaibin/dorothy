@@ -9,4 +9,10 @@ tags:
 published: true
 comments: true
 ---
-<p><p>首先打开Google地图，在上面寻找一个地址，然后上下左右移动地图，让这个地址正好处于地图的正中心位置，当您想寻找坐标位置已经处于地图的中心位置的时候，拷贝并粘贴以下代码到你的浏览器地址栏：<br /> javascript:void(prompt('',gApplication.getMap().getCenter()));<br /> 这时，你将得到一个弹出式的坐标，这个坐标就是你需要找的经度和纬度</p></p>
+首先打开Google地图，在上面寻找一个地址，然后上下左右移动地图，让这个地址正好处于地图的正中心位置，当您想寻找坐标位置已经处于地图的中心位置的时候，拷贝并粘贴以下代码到你的浏览器地址栏:
+
+    javascript:void(prompt('',gApplication.getMap().getCenter())); 
+    
+这时，你将得到一个弹出式的坐标，这个坐标就是你需要找的经度和纬度
+
+

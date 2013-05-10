@@ -10,5 +10,6 @@ tags:
 published: true
 comments: true
 ---
-<p><p>查看NSScreen：</p>
-<p>[NSScreen mainScreen] frame];</p></p>
+查看NSScreen：
+
+    [NSScreen mainScreen] frame];

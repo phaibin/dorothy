@@ -8,9 +8,14 @@ tags: []
 published: true
 comments: true
 ---
-<p><p>查询所有的表：</p>
-<p>SELECT sql FROM sqlite_master WHERE type = 'table'</p>
-<p>查询表结构：</p>
-<p>PRAGMA table_info(table_name);</p>
-<p>这个语句真心好使啊。</p>
-<p>另外.dump talbe_name命令可以显示出创建和加入数据的sql语句，也是相当好用。</p></p>
+查询所有的表：
+
+    SELECT sql FROM sqlite_master WHERE type = 'table'
+
+查询表结构：
+
+    PRAGMA table_info(table_name);
+
+这个语句真心好使啊。
+
+另外，dump talbe_name命令可以显示出创建和加入数据的sql语句，也是相当好用。

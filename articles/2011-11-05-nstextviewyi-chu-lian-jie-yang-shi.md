@@ -10,5 +10,6 @@ tags:
 published: true
 comments: true
 ---
-<p><p>给NSTextView加入带链接的NSAttributeString的时候，不管怎么调NSAttributeString的属性，链接的颜色和下划线样式都改不掉，原来要调NSTextView的属性：</p>
-<p>[textView setLinkTextAttributes:nil];</p></p>
+给NSTextView加入带链接的NSAttributeString的时候，不管怎么调NSAttributeString的属性，链接的颜色和下划线样式都改不掉，原来要调NSTextView的属性：
+
+    [textView setLinkTextAttributes:nil];
