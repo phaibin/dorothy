@@ -77,6 +77,10 @@ module Toto
       end}
     end
 
+    def atom type = :xml
+      index :xml
+    end
+
     def archives filter = ""
       puts 'archives'
       entries = ! self.articles.empty??
@@ -105,6 +109,8 @@ module Toto
       end
 
       body, status = if Context.new.respond_to?(:"to_#{type}")
+        puts "route " + route.to_s
+        puts "path " + path.to_s
         if route.first =~ /\d{4}/
           case route.size
             when 1..3
@@ -126,6 +132,7 @@ module Toto
       end
 
     rescue Errno::ENOENT => e
+      puts "error"
       return :body => context[{}, '404'], :type => :html, :status => 404
     else
       return :body => body || "", :type => type, :status => status || 200
@@ -192,17 +199,21 @@ module Toto
       end
 
       def render page, type
-        content = to_html page, @config
+        puts "render " + page.to_s
+        puts "type " + type.to_s
+        content = to_html page, @config if type == :html
         type == :html ? to_html(:layout, @config, &Proc.new { content }) : send(:"to_#{type}", page)
       end
 
       def to_xml page
+        puts "to_xml " + page.to_s
         xml = Builder::XmlMarkup.new(:indent => 2)
         instance_eval File.read("#{Paths[:templates]}/#{page}.builder")
       end
       alias :to_atom to_xml
 
       def method_missing m, *args, &blk
+        puts "method_missing"
         @context.respond_to?(m) ? @context.send(m, *args, &blk) : super
       end
     end
@@ -239,6 +250,7 @@ module Toto
     end
 
     def to_html
+      puts "to_html"
       super(:archives, @config)
     end
     alias :to_s to_html

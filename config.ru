@@ -20,6 +20,7 @@ toto = Toto::Server.new do
   # 
   set :author,    '文祥'                               # blog author
   set :site_title,     '海神'                   # site title
+  set :url,     'http://phaibin.herokuapp.com'                   # site url
   # set :root,      "index"                                   # page to load on /
   set :date,      lambda {|now| now.strftime("%Y.%m.%d") }  # date format for articles
   # set :markdown,  :smart                                    # use markdown + smart-mode
