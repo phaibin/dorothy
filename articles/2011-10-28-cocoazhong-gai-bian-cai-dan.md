@@ -10,6 +10,8 @@ tags:
 published: true
 comments: true
 ---
-<p><p>实现NSWindowDelegate的方法：</p>
-<p>- (void)windowDidBecomeKey:(NSNotification *)notification</p>
-<p>然后调用NSApplication的- (void)setMainMenu:(NSMenu *)aMenu方法</p></p>
+实现NSWindowDelegate的方法：
+
+    - (void)windowDidBecomeKey:(NSNotification *)notification
+
+然后调用NSApplication的`- (void)setMainMenu:(NSMenu *)aMenu`方法

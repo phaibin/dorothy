@@ -9,4 +9,4 @@ tags:
 published: true
 comments: true
 ---
-<p><p>在Targets，Build Settings下面搜索Product Name</p></p>
+在Targets，Build Settings下面搜索Product Name

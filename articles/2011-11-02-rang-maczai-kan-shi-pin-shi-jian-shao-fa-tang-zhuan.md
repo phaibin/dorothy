@@ -9,5 +9,6 @@ tags:
 published: true
 comments: true
 ---
-<p><p>原文：<a href="http://macoolife.com/blog/130/">http://macoolife.com/blog/130/</a></p>
-<p>就是把safari的用户代理设为iPad，CPU占用就不那么高了。</p></p>
+原文：<http://macoolife.com/blog/130/>
+
+就是把safari的用户代理设为iPad，CPU占用就不那么高了。
